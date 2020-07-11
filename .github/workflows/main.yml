@@ -1,0 +1,9 @@
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: '"C:/Program Files (x86)/IIS/Microsoft Web Deploy V3/msdeploy.exe"'
