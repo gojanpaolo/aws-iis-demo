@@ -21,7 +21,7 @@ jobs:
     - uses: garygrossgarten/github-action-scp@release
       with:
         local: README.md
-        remote: test
+        remote: C:/test
         host: ec2-18-189-7-13.us-east-2.compute.amazonaws.com
         username: Administrator
         password: ${{ secrets.ec2_password }}
