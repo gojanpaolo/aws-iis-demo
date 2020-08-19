@@ -3,18 +3,25 @@ on:
     branches: [ master ]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
     # - env:
     #     ec2_password: ${{ secrets.ec2_password }}
     #   run: | 
     #     & "C:/Program Files (x86)/IIS/Microsoft Web Deploy V3/msdeploy.exe" -verb:sync -source:contentPath="$env:github_workspace" -dest:contentPath="site",computerName="ec2-18-189-7-13.us-east-2.compute.amazonaws.com",userName="Administrator",password="$env:ec2_password"
-    - uses: appleboy/scp-action@master
+    # - uses: appleboy/scp-action@master
+    #   with:
+    #     host: "ec2-18-189-7-13.us-east-2.compute.amazonaws.com"
+    #     username: "Administrator"
+    #     password: ${{ secrets.ec2_password }}
+    #     port: 22
+    #     source: "README.md"
+    #     target: "test"
+    - uses: garygrossgarten/github-action-scp@release
       with:
-        host: "ec2-18-189-7-13.us-east-2.compute.amazonaws.com"
-        username: "Administrator"
+        local: README.md
+        remote: test
+        host: ec2-18-189-7-13.us-east-2.compute.amazonaws.com
+        username: Administrator
         password: ${{ secrets.ec2_password }}
-        port: 22
-        source: "README.md"
-        target: "test"
