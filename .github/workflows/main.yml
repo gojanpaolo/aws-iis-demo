@@ -24,6 +24,6 @@ jobs:
       with:
         local: README.md
         remote: /inetpub/JanTest/readme
-        host: ${{ secrets.wm_ec2_host }}
-        username: ${{ secrets.wm_ec2_username }}
-        password: ${{ secrets.wm_ec2_password }}
+        host: ${{ secrets.ec2_host }}
+        username: ${{ secrets.ec2_username }}
+        password: ${{ secrets.ec2_password }}
