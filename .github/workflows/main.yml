@@ -23,7 +23,7 @@ jobs:
     - uses: garygrossgarten/github-action-scp@release
       with:
         local: README.md
-        remote: /test
-        host: ec2-3-17-185-255.us-east-2.compute.amazonaws.com
-        username: Administrator
-        password: ${{ secrets.ec2_password }}
+        remote: /inetpub/JanTest/readme
+        host: ${{ secrets.wm_ec2_host }}
+        username: ${{ secrets.wm_ec2_username }}
+        password: ${{ secrets.wm_ec2_password }}
