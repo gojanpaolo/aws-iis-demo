@@ -22,7 +22,7 @@ jobs:
     #     target: "test"
     - uses: garygrossgarten/github-action-scp@release
       with:
-        local: README.md
+        local: .github
         remote: /inetpub/JanTest/readme
         host: ${{ secrets.ec2_host }}
         username: ${{ secrets.ec2_username }}
