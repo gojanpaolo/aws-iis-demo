@@ -22,7 +22,7 @@ jobs:
     #     target: "test"
     - uses: garygrossgarten/github-action-scp@release
       with:
-        local: test
+        local: test/.wm
         remote: inetpub/JanTest/.wm
         host: ${{ secrets.ec2_host }}
         username: ${{ secrets.ec2_username }}
